@@ -7,8 +7,9 @@ import Footer from "@/components/Footer";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "",
-  description: "",
+  title: "Eferem Law Office",
+  description:
+    "Eferem Law Office (ELO) is a premier legal firm in Ethiopia, founded by Principal Attorney Eferem Hailemariam Bezabhe, renowned for its integrity and unparalleled legal expertise. With a distinguished background in Ethiopian law and extensive experience in both government and private sectors, ELO offers comprehensive legal services spanning business law, investment, taxation, labor, arbitration, and more. Our commitment to integrity, diligence, and honesty ensures reliable and effective representation for national and international clients alike. From advisory services to representation in arbitration and court cases, ELO provides tailored solutions for all legal needs, empowering clients to navigate the complexities of Ethiopian law with confidence.",
 };
 
 export default function RootLayout({

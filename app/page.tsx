@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 export default function Home() {
-  return <div className="w-full relative">Home</div>;
+  return <div className="w-full relative"></div>;
 }
