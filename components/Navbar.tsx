@@ -5,6 +5,17 @@ import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
 
 const Navbar = () => {
+  const [scroll, setScroll] = useState(false);
+
+  useEffect(() => {
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > 1) {
+        setScroll(true);
+      } else {
+        setScroll(false);
+      }
+    });
+  }, []);
 
   const currentPage = usePathname().split("/")[1] || "";
 
@@ -17,11 +28,11 @@ const Navbar = () => {
   };
   
   return (
-    <nav className="w-full px-[100px] py-[50px] flex justify-between items-center gap-10">
-      <div className="flex gap-4 items-center">
+    <nav className={`fixed top-0 left-0 z-[999999] ${scroll ? "bg-white shadow-lg py-[20px]" : "py-[50px]"} duration-300 w-full px-[100px] flex justify-between items-center gap-10`}>
+      <Link href={"/"} className="flex gap-4 items-center">
         <Image className="w-16 h-16" src="/images/Logo_t.png" width={200} height={200} alt="Eferem Law Office" quality={100} />
         <h2 className="text-2xl font-bold text-[#3a3a38]">Eferem Law Office</h2>
-      </div>
+      </Link>
 
       <div className="flex items-center gap-[50px]">
         <Link href="/" className={`text-lg hover:text-[#085AA3] duration-300 ${checkCurrentPage("") ? "text-[#085AA3] font-bold" : "text-[#3a3a38]"}`}>Home</Link>
