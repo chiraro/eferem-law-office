@@ -7,7 +7,7 @@ export default function PracticeAreas() {
   return (
     <div className='w-full flex flex-col items-center gap-14 px-8 md:px-14 lg:px-[100px]'>
         <h2 className='text-5xl xs:text-[60px] text-[#3a3a38] font-semibold'>Our Practice Areas</h2>
-        <div className="w-full grid grid-cols-1 md:grid-cols-2 gap-5">
+        <div className="w-full grid grid-cols-1 md:grid-cols-2 gap-10">
             {practiceAreas?.slice(0, 4).map((area, index) => (
                 <div key={index} className="w-full md:max-w-[570px] px-5 xs:px-12 py-10 bg-[#085AA3] rounded-lg flex flex-col gap-5">
                     <div className="w-fit flex items-center justify-center bg-[#043C6F] text-5xl text-[#FCA834] rounded-full p-4">
