@@ -1,7 +1,12 @@
-import Image from "next/image";
 import Hero from "./Hero";
 import AboutUs from "./AboutUs";
 import PracticeAreas from "./PracticeAreas";
+import Retention from "./Retention";
+import Staff from "./Staff";
+import WeHelp from "./WeHelp";
+import Experience from "./Experience";
+import Blog from "./Blog";
+import LetsWork from "./LetsWork";
 
 export default function Home() {
   return (
@@ -9,5 +14,11 @@ export default function Home() {
         <Hero />
         <AboutUs />
         <PracticeAreas />
+        <Retention />
+        <Staff />
+        <WeHelp />
+        <Experience />
+        <Blog />
+        <LetsWork />
     </div>
 )}
