@@ -12,6 +12,7 @@ const Navbar = () => {
   const [isWhite, setIsWhite] = useState(false);
 
   const currentPage = usePathname().split("/")[1] || "";
+  const whiteNavs = ["contact", "blog"];
 
   useEffect(() => {
     let prevScrollPos = window.scrollY;
@@ -22,7 +23,7 @@ const Navbar = () => {
       prevScrollPos = currentScrollPos;
     };
 
-    if (currentPage === "contact"){
+    if (whiteNavs.includes(currentPage)){
       setIsWhite(true);
     }else {
       setIsWhite(false);
@@ -32,7 +33,7 @@ const Navbar = () => {
       if (window.scrollY > 50) {
         setIsWhite(false);
       } else {
-        if (currentPage === "contact"){
+        if (whiteNavs.includes(currentPage)){
           setIsWhite(true);
         }else {
           setIsWhite(false);
@@ -75,7 +76,7 @@ const Navbar = () => {
           <Link href="/contact" className={`text-lg ${isWhite && "text-[#ffffff_!important]"} hover:text-[#085AA3] duration-300 ${checkCurrentPage("contact") ? "text-[#085AA3]" : "text-[#3a3a38]"}`}>Contact</Link>
         </div>
 
-        <div className={`flex xl:hidden border border-[#3a3a38] ${isWhite ? "text-white" : "text-[#3a3a38]"} text-4xl cursor-pointer rounded-lg p-2`} onClick={() => setMenuOpen(true)}>
+        <div className={`flex xl:hidden border ${isWhite ? "text-white border-[#fff]" : "text-[#3a3a38] border-[#3a3a38]"} text-4xl cursor-pointer rounded-lg p-2`} onClick={() => setMenuOpen(true)}>
           <LuMenu />
         </div>
       </nav>
@@ -86,12 +87,12 @@ const Navbar = () => {
         </div>
         <div className="flex justify-center px-10">
             <div className="flex flex-col items-center gap-10">
-              <Link href="/" className={`text-3xl hover:text-[#FCA834] duration-300 ${checkCurrentPage("") ? "text-[#FCA834] font-bold" : "text-[#fff]"}`}>Home</Link>
-              <Link href="/about" className={`text-3xl hover:text-[#FCA834] duration-300 ${checkCurrentPage("about") ? "text-[#FCA834]" : "text-[#fff]"}`}>About</Link>
-              <Link href="/practice-areas" className={`text-3xl hover:text-[#FCA834] duration-300 ${checkCurrentPage("practice-areas") ? "text-[#FCA834]" : "text-[#fff]"}`}>Practice Areas</Link>
-              <Link href="/our-team" className={`text-3xl hover:text-[#FCA834] duration-300 ${checkCurrentPage("our-team") ? "text-[#FCA834]" : "text-[#fff]"}`}>Our Team</Link>
-              <Link href="/blog" className={`text-3xl hover:text-[#FCA834] duration-300 ${checkCurrentPage("blog") ? "text-[#FCA834]" : "text-[#fff]"}`}>Blog</Link>
-              <Link href="/contact" className={`text-3xl hover:text-[#FCA834] duration-300 ${checkCurrentPage("contact") ? "text-[#FCA834]" : "text-[#fff]"}`}>Contact</Link>
+              <Link href="/" className={`text-3xl hover:text-[#FCA834] duration-300 ${checkCurrentPage("") ? "text-[#FCA834] font-bold" : "text-[#fff]"}`} onClick={() => setMenuOpen(false)}>Home</Link>
+              <Link href="/about" className={`text-3xl hover:text-[#FCA834] duration-300 ${checkCurrentPage("about") ? "text-[#FCA834]" : "text-[#fff]"}`} onClick={() => setMenuOpen(false)}>About</Link>
+              <Link href="/practice-areas" className={`text-3xl hover:text-[#FCA834] duration-300 ${checkCurrentPage("practice-areas") ? "text-[#FCA834]" : "text-[#fff]"}`} onClick={() => setMenuOpen(false)}>Practice Areas</Link>
+              <Link href="/our-team" className={`text-3xl hover:text-[#FCA834] duration-300 ${checkCurrentPage("our-team") ? "text-[#FCA834]" : "text-[#fff]"}`} onClick={() => setMenuOpen(false)}>Our Team</Link>
+              <Link href="/blog" className={`text-3xl hover:text-[#FCA834] duration-300 ${checkCurrentPage("blog") ? "text-[#FCA834]" : "text-[#fff]"}`} onClick={() => setMenuOpen(false)}>Blog</Link>
+              <Link href="/contact" className={`text-3xl hover:text-[#FCA834] duration-300 ${checkCurrentPage("contact") ? "text-[#FCA834]" : "text-[#fff]"}`} onClick={() => setMenuOpen(false)}>Contact</Link>
             </div>
         </div>
       </div>

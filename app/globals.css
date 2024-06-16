@@ -12,3 +12,55 @@
 body {
     background-color: #F1F1EF;
 }
+
+/* //////////////////////////////////////// Pagination ////////////////////////////////////// */
+.pagination{
+    width: 100%;
+    /* float: right; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 50px 0;
+    border-radius: 100px;
+}
+.pagination__page{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 35px;
+    height: 35px;
+    font-size: 1.5rem;
+    border-radius: 50%;
+    /* background-color: #489b42; */
+    color: #555;
+    margin: 0 5px;
+    cursor: pointer;
+}
+.pagination__pageActive{
+    color: #000;
+}
+.pagination__pagePrev{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 35px;
+    height: 35px;
+    font-size: 2rem;
+    border-radius: 50%;
+    margin-right: 30px;
+    color: #555;
+    cursor: pointer;
+}
+.pagination__pageNext{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 35px;
+    height: 35px;
+    font-size: 2rem;
+    border-radius: 50%;
+    margin-left: 30px;
+    color: #555;
+    cursor: pointer;
+}
+/* ///////////////////////////////////////////////////////////////////////////////////////// */
