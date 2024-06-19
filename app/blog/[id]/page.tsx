@@ -4,12 +4,16 @@ import { useParams } from 'next/navigation'
 import ViewBlog from "./ViewBlog";
 
 export default function page() {
-    const { id } = useParams()
 
     return (
         <div className="w-full min-h-screen relative">
             <Hero />
-            <ViewBlog id={id} />
+            <GetParam />
         </div>
     )
+}
+
+const GetParam = () => {
+    const { id } = useParams()
+    return <ViewBlog id={id} />
 }
