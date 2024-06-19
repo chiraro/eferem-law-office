@@ -13,7 +13,7 @@ export default function page() {
     )
 }
 
-const GetParam = () => {
-    const { id } = useParams()
-    return <ViewBlog id={id} />
-}
+const GetParam: React.FC = () => {
+    const { id } = useParams();
+    return <ViewBlog id={id} />;
+};
