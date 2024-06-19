@@ -16,8 +16,8 @@ export default function BlogCard({d}: BlogCardProps) {
         <div className="w-full grid grid-cols-1 lg:grid-cols-2 gap-14">
             {blogs?.map((blog: any, index: any) => (
                 <div key={index} className='w-full lg:max-w-[600px] flex flex-col sm:flex-row gap-5 items-center'>
-                    <div className="relative w-full sm:w-[400px] min-h-[300px] max-h-[300px]">
-                        <Image className='' src={blog.image} alt={blog.title} objectFit='cover' layout='fill' quality={100} />
+                    <div className="relative w-full sm:w-[400px] h-[300px] ">
+                        <Image className='w-full h-full object-cover' src={blog.image} alt={blog.title} width={800} height={600} quality={100} />
                     </div>
                     <div className="flex flex-col gap-5">
                         <h3 className='text-3xl font-medium leading-[2.3rem] max-w-[350px] text-[#3A3A38]'>{blog.title}</h3>

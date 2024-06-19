@@ -37,7 +37,7 @@ const Paginator = ({d}: BlogPaginatorProps) => {
       setPageCount(Math.ceil(data.length / itemsPerPage));
       
   
-    }, [itemOffset, itemsPerPage]);
+    }, [itemOffset, itemsPerPage, data]);
   
   
     const handlePageClick = (event: any) => {

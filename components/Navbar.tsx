@@ -1,7 +1,7 @@
 'use client';
 import Image from "next/image";
 import Link from "next/link";
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { usePathname } from "next/navigation";
 import { LuMenu, LuX } from "react-icons/lu";
 
@@ -12,20 +12,20 @@ const Navbar = () => {
   const [isWhite, setIsWhite] = useState(false);
 
   const currentPage = usePathname().split("/")[1] || "";
-  const whiteNavs = ["contact", "blog"];
+  const whiteNavs = useMemo(() => ["contact", "blog"], []);
 
   useEffect(() => {
     let prevScrollPos = window.scrollY;
     const handleScroll1 = () => {
       const currentScrollPos = window.scrollY;
       setIsScrolled(currentScrollPos > 50);
-      setScrollingUp(prevScrollPos > currentScrollPos );
+      setScrollingUp(prevScrollPos > currentScrollPos);
       prevScrollPos = currentScrollPos;
     };
 
-    if (whiteNavs.includes(currentPage)){
+    if (whiteNavs.includes(currentPage)) {
       setIsWhite(true);
-    }else {
+    } else {
       setIsWhite(false);
     }
 
@@ -33,14 +33,14 @@ const Navbar = () => {
       if (window.scrollY > 50) {
         setIsWhite(false);
       } else {
-        if (whiteNavs.includes(currentPage)){
+        if (whiteNavs.includes(currentPage)) {
           setIsWhite(true);
-        }else {
+        } else {
           setIsWhite(false);
         }
       }
-    } 
-    
+    };
+
     window.addEventListener("scroll", handleScroll1);
     window.addEventListener("scroll", handleScroll2);
 
@@ -48,16 +48,9 @@ const Navbar = () => {
       window.removeEventListener("scroll", handleScroll1);
       window.removeEventListener("scroll", handleScroll2);
     };
-  }, [isScrolled, scrollingUp, currentPage]);
-  
+  }, [isScrolled, scrollingUp, currentPage, whiteNavs]);
 
-  const checkCurrentPage = (page: String) => {
-    if (currentPage === page) {
-      return true;
-    } else {
-      return false;
-    }
-  };
+  const checkCurrentPage = (page: string) => currentPage === page;
   
   return (
     <div className="relative w-full overflow-x-hidden">
