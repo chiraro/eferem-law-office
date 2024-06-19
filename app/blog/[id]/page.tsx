@@ -1,12 +1,12 @@
 'use client'
-import Hero from "../Hero";
+import Hero from '../../../components/Hero'
 import ViewBlog from "./ViewBlog";
 
 export default function page() {
 
     return (
         <div className="w-full min-h-screen relative">
-            <Hero />
+            <Hero title="News" />
             <ViewBlog />
         </div>
     )

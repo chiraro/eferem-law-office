@@ -1,11 +1,11 @@
 import BlogPaginator from "./BlogPaginator";
-import Hero from "./Hero";
+import Hero from '../../components/Hero'
 
 
 export default function page() {
   return (
     <div className="w-full min-h-screen relative">
-        <Hero />
+        <Hero title="News" />
         <BlogPaginator />
     </div>
   )

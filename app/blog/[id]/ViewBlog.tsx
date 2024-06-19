@@ -20,7 +20,7 @@ export default function ViewBlog() {
         if (blog) {
             setContent(
                 blog.content.split('\n').map((paragraph: string, index: number) => (
-                    <p key={index} className='text-base'>{paragraph}</p>
+                    <p key={index} className='text-base mb-5'>{paragraph}</p>
                 ))
             )
         }
