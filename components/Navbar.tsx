@@ -12,7 +12,7 @@ const Navbar = () => {
   const [isWhite, setIsWhite] = useState(false);
 
   const currentPage = usePathname().split("/")[1] || "";
-  const whiteNavs = useMemo(() => ["contact", "blog", "our-team"], []);
+  const whiteNavs = useMemo(() => ["contact", "blog", "our-team", "practice-areas", "about"], []);
 
   useEffect(() => {
     let prevScrollPos = window.scrollY;
